@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+
+  <title>E-Commerce Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <!--Extra below to make carousel work-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  
+  <div id="root"></div>
+  <div class="top-nav-bar">
+    <div class="search-box">
+      <i class="fa fa-bars" id="menu-btn" onclick="openmenu()"></i>
+      <i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
+      <img src="assets/logo.png" class="logo">
+      <input type="text" class="form-control " placeholder="SEARCH">
+      <span class="input-group-text">
+        <i class="fa fa-search">
+        </i>
+      </span>
+    </div>
+    <div class="menu-bar">
+      <ul>
+        <li><a href="#"><i class="fa fa-shopping-cart"></i>Cart</a></li>
+        <li><a href="signUp.html">Sign Up</a></li>
+        <li><a href="#"><button onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;">Login</button></a></li>
+
+      </ul>
+      
+    </div>
+  </div>
+  <!---------------------------------Log In Button------------------------------------->
+  <div id="id01" class="modal">
+  
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+  
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+          class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+  
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  <section class="header">
+    <div class="side-menu" id="side-menu">
+      <ul>
+        <li>On Sale<i class="fa fa-angle-right"></i>
+          <ul>
+            <li>Sub menu1</li>
+            <li>Sub menu1</li>
+            <li>Sub menu1</li>
+          </ul>
+        </li>
+        <li>Basic<i class="fa fa-angle-right"></i>
+          <ul>
+            <li>Sub menu2</li>
+            <li>Sub menu2</li>
+            <li>Sub menu2</li>
+          </ul>
+        </li>
+        <li>Designer<i class="fa fa-angle-right"></i>
+          <ul>
+            <li>Sub menu3</li>
+            <li>Sub menu3</li>
+            <li>Sub menu3</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+  <!----------------------------Featured categories-------------------------------------->
+  <section class="featured-categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="assets/img1.jpg">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img3.jpg">
+        </div>
+        <div class="col-md-4">
+          <img src="assets/img2.jpeg">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!----------------------------------On Sale Products------------------------------------------------>
+  <section class="on-sale">
+    <div class="container">
+      <div class="title-box">
+        <h2>On Sale</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="product-top">
+            <img src="assets/img4.jpeg">
+            <div class="overlay-right">
+              <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-bottom text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <h3>M & M Almonds Bar</h3>
+            <h5>$2.99</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="product-top">
+            <img src="assets/img6.jpg">
+            <div class="overlay-right">
+              <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-bottom text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <h3>M & M Peanut</h3>
+            <h5>$1.25</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="product-top">
+            <img src="assets/img5.jpg">
+            <div class="overlay-right">
+              <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-bottom text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <h3>Hershey's Chocolate Bar</h3>
+            <h5>$1.25</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="product-top">
+            <img src="assets/img8.png">
+            <div class="overlay-right">
+              <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-bottom text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <i class="fa fa-star-o"></i>
+            <h3>Reese's PB Cups mini</h3>
+            <h5>$3.19</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="product-top">
+            <img src="assets/img9.png">
+            <div class="overlay-right">
+              <button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i class="fa fa-heart-o"></i>
+              </button>
+              <button type="button" class="btn btn-secondary" title="Add to Cart"><i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-bottom text-center">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <h3>Reese's Cups</h3>
+            <h5>$1.25</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+  <script>
+    function openmenu() {
+      document.getElementById("side-menu").style.display = "block";
+      document.getElementById("menu-btn").style.display = "none";
+      document.getElementById("close-btn").style.display = "block";
+    }
+    function closemenu() {
+      document.getElementById("side-menu").style.display = "none";
+      document.getElementById("menu-btn").style.display = "block";
+      document.getElementById("close-btn").style.display = "none";
+    }
+  </script>
+
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>
